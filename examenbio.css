@@ -1,0 +1,378 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0D1B5E 0%,
+        #1E4FB8 45%,
+        #8B1E3F 75%,
+        #B71C1C 100%
+    );
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* FONDO */
+
+.fondo{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(255,255,255,0.08),
+        transparent 35%
+    );
+
+    z-index:-1;
+
+}
+
+/* CONTENEDOR */
+
+.contenedor{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:60px 0;
+
+}
+
+/* TITULO */
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.titulo h1{
+
+    font-size:75px;
+
+    text-shadow:
+    0px 0px 20px rgba(255,255,255,0.5);
+
+}
+
+.titulo h2{
+
+    color:#d9b3ff;
+
+    margin-top:10px;
+
+    font-size:30px;
+
+}
+
+/* PREGUNTA */
+
+.pregunta{
+
+    position:relative;
+
+    background:rgba(255,255,255,0.07);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    margin-bottom:50px;
+
+    transition:0.4s;
+
+    overflow:hidden;
+
+}
+
+/* HOVER */
+
+.pregunta:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0px 0px 30px rgba(190,140,255,0.4);
+
+}
+
+/* BRILLO */
+
+.pregunta::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-200%;
+
+    width:200%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    transition:1s;
+
+}
+
+.pregunta:hover::before{
+
+    left:200%;
+
+}
+
+/* FORMULA */
+
+.formula{
+
+    font-size:35px;
+
+    margin:25px 0;
+
+    color:#ffd6ff;
+
+}
+
+/* OPCIONES */
+
+.opciones{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.opciones label{
+
+    background:rgba(255,255,255,0.05);
+
+    padding:18px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.opciones label:hover{
+
+    transform:translateX(10px);
+
+    background:rgba(255,255,255,0.12);
+
+}
+
+/* BOTONES */
+
+.acciones{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.btn-pista,
+.btn-formula,
+#calcular{
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+/* PISTA */
+
+.btn-pista{
+
+    background:
+    linear-gradient(
+        135deg,
+        #8e2de2,
+        #c471ed
+    );
+
+}
+
+/* FORMULA */
+
+.btn-formula{
+
+    background:
+    linear-gradient(
+        135deg,
+        #4776e6,
+        #8e54e9
+    );
+
+}
+
+/* HOVER BOTONES */
+
+.btn-pista:hover,
+.btn-formula:hover,
+#calcular:hover{
+
+    transform:
+    scale(1.08);
+
+    box-shadow:
+    0px 0px 25px rgba(255,255,255,0.5);
+
+}
+
+/* POPUPS */
+
+.popup{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(0.7);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:0.35s;
+
+    z-index:50;
+
+}
+
+/* POPUP ACTIVO */
+
+.popup.activo{
+
+    opacity:1;
+
+    transform:
+    translate(-50%,-50%)
+    scale(1);
+
+    pointer-events:auto;
+
+}
+
+/* IMAGEN */
+
+.popup img{
+
+    width:400px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0px 0px 40px rgba(0,0,0,0.7);
+
+}
+
+/* FINAL */
+
+.sector-final{
+
+    text-align:center;
+
+    margin-top:80px;
+
+}
+
+/* BOTON NOTA */
+
+#calcular{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff512f,
+        #dd2476
+    );
+
+    padding:22px 50px;
+
+    font-size:24px;
+
+}
+/* FRACCIONES */
+.frac{
+    display:inline-block;
+    text-align:center;
+    vertical-align:middle;
+}
+.frac .top{
+    display:block;
+    border-bottom:3px solid white;
+    padding:0 4px;
+}
+.frac .bottom{
+    display:block;
+}
+
+/*raices*/
+.llave{
+    display: inline-block;
+    font-size: 50px;
+    transform: scaleY(3.5);
+    transform-origin: center;
+}
